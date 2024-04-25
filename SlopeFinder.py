@@ -12,7 +12,6 @@ def draw_line_on_image(image_path, x_length : int = 0, y_length : int = 0):
     image = plt.imread(image_path)
     fig, ax = plt.subplots()
     ax.imshow(image)
-    ax.set_title('Click points to draw lines. First line: slope, Second and Third lines: lengths.')
 
     # Collect the first two clicks for the first line
     first_two_points = plt.ginput(2, timeout=-1)  
@@ -22,7 +21,8 @@ def draw_line_on_image(image_path, x_length : int = 0, y_length : int = 0):
     slope = -dy / dx if dx != 0 else float('inf')  # Avoid division by zero
     ax.plot(first_two_points[:, 0], first_two_points[:, 1], 'ro-')
     ax.text(np.mean(first_two_points[:, 0]), np.mean(first_two_points[:, 1]),
-            f'Slope: {slope:.2f}', fontsize=12, color='black')
+            f'Slope: {slope:.2f}', fontsize=12, color='black',
+        bbox=dict(facecolor='white', edgecolor='none', boxstyle='square,pad=0.3'))
 
     # Collect the third click for the second line
     third_fourth_points = plt.ginput(2, timeout=-1) 
