@@ -84,6 +84,8 @@ def draw_line_on_image(image_path, x_length : int = 0, y_length : int = 0):
         bbox=dict(facecolor='white', edgecolor='none', boxstyle='square,pad=0.3'))
 
     # print the true slope
+    x_distance = -(np.mean(second_line[:, 0]) - np.mean([first_two_points[0][0], first_two_points[1][0]]))/x_ratio
+    y_distance = (np.mean(third_line[:, 1]) - np.mean([first_two_points[0][1], first_two_points[1][1]]))/y_ratio
     y_intercept = y_distance - true_slope * x_distance
     x_intercept = x_distance - (y_distance / true_slope)
     ax.text(0, 0, f'True slope: {true_slope:.2f}\nY-intercept: {y_intercept:.2f}\nX-intercept: {x_intercept:.2f}', fontsize=20, color='black',
