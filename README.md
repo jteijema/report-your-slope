@@ -27,7 +27,7 @@ Example:
 python SlopeFinder.py --image_path="path/to/image.jpg" --x_length=6 --y_length=100
 ```
 
-![img](.\img\image.png)
+![img](https://github.com/jteijema/report-your-slope/blob/main/img/image.png)
 
 Interacting with the Image:
     Click 1: Click on the image to mark the starting point of the slope line.
@@ -36,7 +36,7 @@ Interacting with the Image:
     Click 4: Click on the image to mark the lower left corner of the graph, establishing the vertical measurement for scaling.
     Click 5: Click on the image to mark the lower right corner of the graph, establishing the horizontal measurement for scaling.
 
-![img](.\img\image_result.png)
+![img](https://github.com/jteijema/report-your-slope/blob/main/img/image_result.png)
 
 View Results: After the final click, the script calculates and displays:
     The lengths of the second and third lines based on the pixel distances between the points.
